@@ -1,7 +1,7 @@
 {
   "app-id": "dev.mooday.GstPipelineStudio",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "50",
+  "runtime-version": "51",
   "sdk": "org.gnome.Sdk",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.rust-stable"
@@ -32,8 +32,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.freedesktop.org/-/project/12908/uploads/0916f29f8e7c059b23050b0189013a88/gst-pipeline-studio-0.5.1.tar.xz",
-          "sha256": "240b155194faaaac75d6fd24f84c9635d3e88c9281e367219da3b6bdce2aef71"
+          "url": "https://gitlab.freedesktop.org/-/project/12908/uploads/b86bce7c42d892f8f4bbb2662e8297d9/gst-pipeline-studio-0.6.0.tar.xz",
+          "sha256": "6cdc5ecdfea165e5c06601fd151c3fd5abf9f1abd663b2fe3117f00916360652"
         }
       ]
     }
