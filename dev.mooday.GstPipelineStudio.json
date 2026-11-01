@@ -27,13 +27,86 @@
   },
   "modules": [
     {
+      "name": "fast_float",
+      "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DFASTFLOAT_TEST=OFF"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/fastfloat/fast_float/archive/refs/tags/v8.1.0.tar.gz",
+          "sha256": "4bfabb5979716995090ce68dce83f88f99629bc17ae280eae79311c5340143e1"
+        }
+      ],
+      "cleanup": [
+        "*"
+      ]
+    },
+    {
+      "name": "simdutf",
+      "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DSIMDUTF_TESTS=OFF",
+        "-DSIMDUTF_TOOLS=OFF",
+        "-DSIMDUTF_BENCHMARKS=OFF",
+        "-DCMAKE_CXX_VISIBILITY_PRESET=hidden",
+        "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+        "-DCMAKE_VISIBILITY_INLINES_HIDDEN=ON"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/simdutf/simdutf/archive/refs/tags/v8.2.0.tar.gz",
+          "sha256": "033a91b1d7d1cb818c1eff49e61faaa1b64a3a530d59ef9efef0195e56bda8b1"
+        }
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/lib/pkgconfig",
+        "*.a"
+      ]
+    },
+    {
+      "name": "vte",
+      "buildsystem": "meson",
+      "config-opts": [
+        "--libdir=lib",
+        "-Dgtk3=false",
+        "-Dgtk4=true",
+        "-Dgir=false",
+        "-Dvapi=false",
+        "-Dicu=false",
+        "-Dapp=false",
+        "-Ddocs=false",
+        "-Dglade=false",
+        "-Dgnutls=false",
+        "-D_systemd=false"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/vte/0.84/vte-0.84.1.tar.xz",
+          "sha256": "aca1caa8478aebcdbb1d67897fb3511eb7601debae6810e16a15b6fa25f31ac8"
+        }
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/libexec",
+        "/share/vte",
+        "/etc"
+      ]
+    },
+    {
       "name": "gst-pipeline-studio",
       "buildsystem": "meson",
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.freedesktop.org/-/project/12908/uploads/7210d2ee7f520e9e8977f3a8f2825775/gst-pipeline-studio-0.7.1.tar.xz",
-          "sha256": "d6d619f4bbad1268717effcc79eeae5e3604c256375d81823da1d5ed9881648b"
+          "url": "https://gitlab.freedesktop.org/-/project/12908/uploads/ccf153022c3bdb29fd8ae600274b70d2/gst-pipeline-studio-0.7.2.tar.xz",
+          "sha256": "36a5ddc831172b1186f2521aece31f262a227ce0a1b7f8bb305887c47c083f3a"
         }
       ]
     }
